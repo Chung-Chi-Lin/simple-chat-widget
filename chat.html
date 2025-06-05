@@ -23,12 +23,13 @@
 
 <script>
 	const toggleBtn = document.getElementById('toggleBtn');
-	const chatWrapper = document.getElementById('chatWrapper');
+	const chatBody = document.querySelector('.chat-container');
 
 	toggleBtn.addEventListener('click', () => {
-		chatWrapper.classList.toggle('collapsed');
-		toggleBtn.textContent = chatWrapper.classList.contains('collapsed') ? '▲' : '✖';
+		chatBody.classList.toggle('collapsed');
+		toggleBtn.textContent = chatBody.classList.contains('collapsed') ? '▲' : '✖';
 	});
 </script>
+
 </body>
 </html>
