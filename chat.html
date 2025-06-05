@@ -1,26 +1,29 @@
-<!-- chat.html -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Chat Window</title>
+    <link rel="stylesheet" href="chat-style.css" />
 </head>
-<body style="margin: 0;">
-
-<!-- ✅ 外層容器：加上 border -->
-<div style="border: 2px solid #000; width: 100%; height: 100%; box-sizing: border-box;">
-
-    <!-- ✅ 上方黃色標題列 -->
-    <div style="background-color: yellow; padding: 10px; font-weight: bold;">
-        聊天室
+<body>
+<div class="chat-container">
+    <div class="chat-header">
+        <span>聊天室</span>
+        <button class="toggle-btn" id="toggleBtn">✖</button>
     </div>
-
-    <!-- ✅ 內容 -->
-    <div style="padding: 10px;">
+    <div class="chat-body" id="chatBody">
         <p>你好，我是聊天視窗！</p>
     </div>
-
 </div>
 
+<script>
+	const toggleBtn = document.getElementById('toggleBtn');
+	const chatBody = document.getElementById('chatBody');
+
+	toggleBtn.addEventListener('click', () => {
+		chatBody.classList.toggle('collapsed');
+		toggleBtn.textContent = chatBody.classList.contains('collapsed') ? '▲' : '✖';
+	});
+</script>
 </body>
 </html>
