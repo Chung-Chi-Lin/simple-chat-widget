@@ -6,23 +6,28 @@
     <link rel="stylesheet" href="chat-style.css" />
 </head>
 <body>
-<div class="chat-container">
+<div class="chat-wrapper" id="chatWrapper">
     <div class="chat-header">
         <span>聊天室</span>
         <button class="toggle-btn" id="toggleBtn">✖</button>
     </div>
-    <div class="chat-body" id="chatBody">
-        <p>你好，我是聊天視窗！</p>
+    <div class="chat-container">
+        <div class="chat-message left">您好，我是客服，請問需要什麼協助？</div>
+        <div class="chat-message right">我想詢問產品的庫存狀況</div>
+        <div class="chat-message left">目前商品皆有現貨唷！</div>
+        <div class="chat-message right">那請問運費是多少？</div>
+        <div class="chat-message left">運費為 60 元，滿千免運</div>
+        <div class="chat-message right">好的，那我知道了謝謝！</div>
     </div>
 </div>
 
 <script>
 	const toggleBtn = document.getElementById('toggleBtn');
-	const chatBody = document.getElementById('chatBody');
+	const chatWrapper = document.getElementById('chatWrapper');
 
 	toggleBtn.addEventListener('click', () => {
-		chatBody.classList.toggle('collapsed');
-		toggleBtn.textContent = chatBody.classList.contains('collapsed') ? '▲' : '✖';
+		chatWrapper.classList.toggle('collapsed');
+		toggleBtn.textContent = chatWrapper.classList.contains('collapsed') ? '▲' : '✖';
 	});
 </script>
 </body>
